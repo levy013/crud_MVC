@@ -1,0 +1,29 @@
+﻿@model List<CRUD_app.Models.Entities.Student>
+<div class="row">
+    <div class="col-10"><h1>Students</h1></div>
+    <div class="col my-auto text-end"><a class="btn btn-warning" asp-controller="Students" asp-action="Add">Add New</a></div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model) {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Students" asp-action="Edit" asp-route-id="@student.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
