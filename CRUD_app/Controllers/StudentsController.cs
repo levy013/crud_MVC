@@ -24,7 +24,7 @@ namespace CRUD_app.Controllers {
                 Name = viewModel.Name,
                 Email = viewModel.Email,
                 Phone = viewModel.Phone,
-                Subscribed = viewModel.Subscribed
+                Enrolled = viewModel.Enrolled
             };
 
             await dbContext.Students.AddAsync(student);
@@ -55,7 +55,7 @@ namespace CRUD_app.Controllers {
                 student.Name = viewModel.Name;
                 student.Email = viewModel.Email;
                 student.Phone = viewModel.Phone;
-                student.Subscribed = viewModel.Subscribed;
+                student.Enrolled = viewModel.Enrolled;
 
                 await dbContext.SaveChangesAsync();
             }
